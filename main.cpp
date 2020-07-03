@@ -2,7 +2,7 @@
 using namespace std;
 int main ()
 {
-  cout << "eldo\n";//ddf
+  cout << "eldo\n";
 
 
     return 0;
