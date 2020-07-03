@@ -2,7 +2,7 @@
 using namespace std;
 int main ()
 {
-  cout << "eldo\n";
+  cout << "Dzien dobry\n";
 
 
     return 0;
