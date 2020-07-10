@@ -1,24 +1,24 @@
 //Paweł Ganobis
 #include <SFML/Graphics.hpp>
-
+using namespace std; 
 int main()
 {
-    sf::RenderWindow window{sf::VideoMode(800,600 ), "Arkanoid"};
+    sf::RenderWindow gra{sf::VideoMode(1024,768 ), "Arkanoid"};
     sf::CircleShape shape(150.f);
     shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
+    while (gra.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        while (gra.pollEvent(event))
         {
             if (event.type == sf::Event::Closed) 
-                window.close();
+                gra.close();
         }
 
-        window.clear();
-        window.draw(shape);
-        window.display(); // test1
+        gra.clear();
+        gra.draw(shape);
+        gra.display(); // test1
     }
 
     return 0;
