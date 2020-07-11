@@ -1,5 +1,6 @@
 //Paweł Ganobis
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 using namespace std; 
 int main()
 {
