@@ -1,1 +1,4 @@
-Jeszcze nic tu nie ma
+Paweł Ganobis
+
+Projekt wykorzystuje bibliotekę sfml. Do kompilacji projektu służy makefile. By skompilować projekt należy użyć polecenia "make".
+Aby usnąć pliki obiektowe i wykonawcze należy użyć komendy "make clean"
