@@ -14,7 +14,6 @@ int main()
 {
     sf::RenderWindow gra_okno{sf::VideoMode(1024,768 ), "Arkanoid"}; 
     Obiekty platforma {};
-    cout << "tt\n";
 
     while (gra_okno.isOpen())
     {
@@ -29,7 +28,6 @@ int main()
         gra_okno.draw(platforma.platform);
         platforma.Pozycja(platforma.X_loc, platforma.Y_loc);
         gra_okno.display(); // test1
-        //shape.setPosition(300, 200);
     }
 
     return 0;
