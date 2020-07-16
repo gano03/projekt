@@ -15,7 +15,7 @@ int main()
 {
     sf::RenderWindow gra_okno{sf::VideoMode(1024,768 ), "Arkanoid"}; 
     Obiekty platforma {};
-    Ruch tt;
+    Ruch platformy;
 
     while (gra_okno.isOpen())
     {
@@ -35,7 +35,7 @@ int main()
             
         //}
         
-        tt.platforma_ruch(platforma);
+        platformy.platforma_ruch(platforma);
         gra_okno.display(); // test1
     }
 
