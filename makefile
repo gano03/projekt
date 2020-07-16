@@ -6,14 +6,17 @@ LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
 
 all: arkanoid.x
 
-arkanoid.x: main.o objects.o
-	$(CC)  main.o objects.o -o arkanoid.x $(LDFLAGS) 
+arkanoid.x: main.o objects.o move.o
+	$(CC)  main.o objects.o move.o -o arkanoid.x $(LDFLAGS) 
 
-main.o: main.cpp 
-	$(CC) -c main.cpp
+main.o: main.cpp objects.h move.h
+	$(CC) -c main.cpp 
 
-objects.o: objects.cpp
+objects.o: objects.cpp objects.h
 	$(CC) -c objects.cpp 
+
+move.o: move.cpp
+	$(CC) -c move.cpp 
 
 clean:
 	$(RM) $(wildcard *.[ox])
