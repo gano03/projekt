@@ -5,6 +5,7 @@
 #include <SFML/Window.hpp>
 #include "objects.h"
 #include "move.h"
+#include "main.h"
 using namespace std;
 /*void pozycje(Obiekty platforma);
 void pozycje (Obiekty platforma)
@@ -13,9 +14,10 @@ void pozycje (Obiekty platforma)
 }*/ 
 int main()
 {
-    sf::RenderWindow gra_okno{sf::VideoMode(1024,768 ), "Arkanoid"}; 
-    Obiekty platforma {};
-    Ruch platformy;
+    sf::RenderWindow gra_okno{sf::VideoMode(1280,800 ), "Arkanoid"};
+    gra_okno.setVerticalSyncEnabled(true);
+    Obiekty platforma;
+    Ruch platformy{platforma.X_loc, platforma.Y_loc};
 
     while (gra_okno.isOpen())
     {
@@ -25,18 +27,10 @@ int main()
             if (event.type == sf::Event::Closed)
                 gra_okno.close();
         }
-
         gra_okno.clear();
-        gra_okno.draw(platforma.platform);
-        platforma.Pozycja(platforma.X_loc, platforma.Y_loc);
-        //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        //{
-            //platforma.platform.move(2,0);
-            
-        //}
-        
-        platformy.platforma_ruch(platforma);
-        gra_okno.display(); // test1
+        platformy.platforma_ruch();
+        gra_okno.draw(platformy.platform);
+        gra_okno.display();
     }
 
     return 0;
