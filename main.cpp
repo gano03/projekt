@@ -24,7 +24,7 @@ int main()
         }
         gra_okno.clear();
         platformy.platforma_ruch();
-        wrogowie.przeciwnicy(30,40,wrogowie);
+        //wrogowie.przeciwnicy(30,40,wrogowie);
         gra_okno.draw(platformy.platform);
         gra_okno.display();
     }

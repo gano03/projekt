@@ -5,11 +5,11 @@
 #include "move.h"
 #include "main.h"
 
-void Obiekty::przeciwnicy(int loc_X, int loc_Y, Wrogowie & nazwa)
+/*void Obiekty::przeciwnicy(int loc_X, int loc_Y, Wrogowie & nazwa)
 {
     nazwa.wrog.setFillColor(sf::Color::Red);
     nazwa.wrog.setPosition(loc_X, loc_Y);
-}
+}*/
 //******************************************************************************
 
 Ruch::Ruch(int X_loc, int Y_loc)

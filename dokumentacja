@@ -8,7 +8,7 @@ Projekt posiada na chwilę obecną:
 -użyte klasy z biblioteki sfml 
 -konstruktory
 -dziedziczenie
--deklaracje przyjaciela
+-deklaracje przyjaciela (jeszcze nie działa dobrze, musiałem zakomentować)
 -pliki nagłowkowe
 -makefile 
 Projekt jest jeszcze w trakcie tworzenia...
