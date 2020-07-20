@@ -2,3 +2,13 @@ Paweł Ganobis
 
 Projekt wykorzystuje bibliotekę sfml. Do kompilacji projektu służy makefile. By skompilować projekt należy użyć polecenia "make".
 Aby usnąć pliki obiektowe i wykonawcze należy użyć komendy "make clean"
+
+Projekt posiada na chwilę obecną:
+-własny szablon klasy
+-użyte klasy z biblioteki sfml 
+-konstruktory
+-dziedziczenie
+-deklaracje przyjaciela
+-pliki nagłowkowe
+-makefile 
+Projekt jest jeszcze w trakcie tworzenia...
