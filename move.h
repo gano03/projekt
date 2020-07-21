@@ -6,12 +6,7 @@
 #include "main.h"
 
 
-class Wrogowie
-{
-    public:
-    
 
-};
 
 
 class Obiekty
@@ -23,10 +18,12 @@ public:
     int sizeX = 70;
     int sizeY = 10;
     sf::RectangleShape platform{sf::Vector2f(sizeX,sizeY)};
-    private:
-    friend class Wrogowie;
-    friend void przeciwnicy(int loc_x, int loc_Y);
     sf::RectangleShape wrog {sf::Vector2f(sizeX, sizeY)};
+    friend class Wrogowie;
+    private:
+    int enemy_loc_X = 400;
+    int enemy_loc_Y = 200; 
+   
 };
 //************************************************************************
 class Ruch:public Obiekty
@@ -46,3 +43,10 @@ class Ruch:public Obiekty
     float idealny_czas = 1.f/144;
 };
 
+class Wrogowie
+{
+    public:
+    void przeciwnicy( Obiekty * platforma_ptr);
+
+
+};

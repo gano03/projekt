@@ -12,7 +12,9 @@ int main()
     gra_okno.setVerticalSyncEnabled(true);
     Obiekty platforma;
     Ruch platformy{platforma.X_loc, platforma.Y_loc};
-    Wrogowie wrogowie;
+    Wrogowie *wrogowie= new (Wrogowie);
+    Obiekty *platforma_ptr = new (Obiekty);
+
 
     while (gra_okno.isOpen())
     {
@@ -24,8 +26,9 @@ int main()
         }
         gra_okno.clear();
         platformy.platforma_ruch();
-        //wrogowie.przeciwnicy(30,40,wrogowie);
+        wrogowie->przeciwnicy(platforma_ptr);
         gra_okno.draw(platformy.platform);
+        gra_okno.draw(platforma_ptr->wrog);
         gra_okno.display();
     }
     return 0;
