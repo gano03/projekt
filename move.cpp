@@ -5,6 +5,15 @@
 #include "move.h"
 #include "main.h"
 
+void  Wrogowie::wrog_ruch(Ruch & platforma)
+{
+    std::cout << "test\n";
+    if (platforma.rozmieszczenie.x > 700)
+    {
+        this->platform.move(30,30);
+    }
+}
+
 void Wrogowie::przeciwnicy( Obiekty * platforma_ptr)
 {
     platforma_ptr->wrog.setFillColor(sf::Color::Red);

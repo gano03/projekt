@@ -5,10 +5,6 @@
 #include <SFML/Window.hpp>
 #include "main.h"
 
-
-
-
-
 class Obiekty
 {
 public:
@@ -30,8 +26,11 @@ class Ruch:public Obiekty
 {
     public:
     Ruch(int X_loc, int Y_loc);
+    Ruch(int k){};
+    ~Ruch(){};
+    virtual void wrog_ruch(Ruch & platforma){};
     void platforma_ruch ();
-    private:
+    //private:
     float aktualna_pozX;
     float aktualna_pozY;
     const float wektorX = 11.f;
@@ -43,10 +42,12 @@ class Ruch:public Obiekty
     float idealny_czas = 1.f/144;
 };
 
-class Wrogowie
+class Wrogowie:public Ruch 
 {
     public:
-    void przeciwnicy( Obiekty * platforma_ptr);
-
-
+    void przeciwnicy (Obiekty * platforma_ptr);
+    void wrog_ruch(Ruch & platforma);
+    Wrogowie()
+    :Ruch(10){}
+    //void platforma_ruch();
 };

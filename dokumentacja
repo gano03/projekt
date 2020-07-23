@@ -7,6 +7,8 @@ Projekt posiada na chwilę obecną:
 -własny szablon klasy
 -użyte klasy z biblioteki sfml 
 -konstruktory
+-destruktory
+-metody wirtualne (jeszcze nie działają)
 -dziedziczenie
 -deklaracje przyjaciela
 -pliki nagłowkowe
