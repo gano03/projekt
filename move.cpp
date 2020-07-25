@@ -5,13 +5,26 @@
 #include "move.h"
 #include "main.h"
 
-void  Wrogowie::wrog_ruch(Ruch & platforma)
+void  Wrogowie::wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr)
 {
     std::cout << "test\n";
-    if (platforma.rozmieszczenie.x > 700)
+    //platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
+    //platforma_ptr->wrog.move(60, 0);
+    if ((platforma.rozmieszczenie.x < (platforma_ptr->rozmieszczenie_wrog.x + 35)) && (platforma.rozmieszczenie.x > (platforma_ptr->rozmieszczenie_wrog.x - 35)))
     {
-        this->platform.move(30,30);
+        platforma_ptr->wrog.move(50, 0);
+        platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
+        platforma_ptr->wrog.setPosition(platforma_ptr->rozmieszczenie_wrog); 
+        platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
+        platforma_ptr->wrog.setFillColor(sf::Color::Green);
+        std::cout << "roz to" << platforma_ptr->rozmieszczenie_wrog.x <<"\n";
     }
+    else
+    //platforma_ptr->wrog.setPosition(platforma_ptr->rozmieszczenie_wrog);
+    platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
+
+    
+    std::cout << "roz to" << platforma_ptr->rozmieszczenie_wrog.x <<"\n";
 }
 
 void Wrogowie::przeciwnicy( Obiekty * platforma_ptr)

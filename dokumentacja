@@ -8,7 +8,7 @@ Projekt posiada na chwilę obecną:
 -użyte klasy z biblioteki sfml 
 -konstruktory
 -destruktory
--metody wirtualne (jeszcze nie działają)
+-metody wirtualne
 -dziedziczenie
 -deklaracje przyjaciela
 -pliki nagłowkowe

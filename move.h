@@ -17,8 +17,11 @@ public:
     sf::RectangleShape wrog {sf::Vector2f(sizeX, sizeY)};
     friend class Wrogowie;
     private:
+    float wrog_aktX;
+    float wrog_aktY;
     int enemy_loc_X = 400;
-    int enemy_loc_Y = 200; 
+    int enemy_loc_Y = 200;
+    sf::Vector2f rozmieszczenie_wrog = {wrog_aktX, wrog_aktY};
    
 };
 //************************************************************************
@@ -28,7 +31,7 @@ class Ruch:public Obiekty
     Ruch(int X_loc, int Y_loc);
     Ruch(int k){};
     ~Ruch(){};
-    virtual void wrog_ruch(Ruch & platforma){};
+    virtual void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr){std::cout << "Funkcja klasy bazowej'n";};
     void platforma_ruch ();
     //private:
     float aktualna_pozX;
@@ -46,7 +49,7 @@ class Wrogowie:public Ruch
 {
     public:
     void przeciwnicy (Obiekty * platforma_ptr);
-    void wrog_ruch(Ruch & platforma);
+    void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr);
     Wrogowie()
     :Ruch(10){}
     //void platforma_ruch();

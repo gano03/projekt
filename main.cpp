@@ -27,7 +27,7 @@ int main()
         gra_okno.clear();
         platformy.platforma_ruch();
         wrogowie->przeciwnicy(platforma_ptr);
-        wrogowie->wrog_ruch(platformy);
+        wrogowie->wrog_ruch(platformy, platforma_ptr);
         gra_okno.draw(platformy.platform);
         gra_okno.draw(platforma_ptr->wrog);
         gra_okno.display();
