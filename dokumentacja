@@ -14,7 +14,7 @@ Projekt posiada na chwilę obecną:
 -zakresowa pętla for 
 -pliki nagłowkowe
 -makefile 
-Projekt jest jeszcze w trakcie tworzenia...
 
 Instrukcja gry:
 Poruszanie platofrmą za pomocą strzałek lewo-prawo, aby zbic czerwona platforma ,należy się ustwić w tej samej pozycji i nacisnąć spację.
+Na wykonanie akcji ma się 5 sekund. Jeśli nie zdąży się zrobić tego w tym czasie, następuje koniec gry.

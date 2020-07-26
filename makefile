@@ -4,10 +4,10 @@ LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
 
 .PHONY: all clean
 
-all: arkanoid.x
+all: gra.x
 
-arkanoid.x: main.o  move.o
-	$(CC)  main.o  move.o -o arkanoid.x $(LDFLAGS) 
+gra.x: main.o  move.o
+	$(CC)  main.o  move.o -o gra.x $(LDFLAGS) 
 
 main.o: main.cpp  move.h
 	$(CC) -c main.cpp 

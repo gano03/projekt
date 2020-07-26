@@ -8,7 +8,7 @@
 using namespace std;
 int main()
 {
-    sf::RenderWindow gra_okno{sf::VideoMode(1280,800 ), "Arkanoid"};
+    sf::RenderWindow gra_okno{sf::VideoMode(1280,800 ), "Gra-projekt"};
     gra_okno.setVerticalSyncEnabled(true);
     Obiekty platforma;
     Ruch platformy{platforma.X_loc, platforma.Y_loc};

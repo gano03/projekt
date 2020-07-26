@@ -17,6 +17,8 @@ public:
     sf::RectangleShape wrog {sf::Vector2f(sizeX, sizeY)};
     friend class Wrogowie; //deklaracja przyjaciela
     private:
+    sf::Clock czasomierz;
+    sf::Time wrog_czas;
     float wrog_aktX;
     float wrog_aktY;
     int enemy_loc_X = 400;
@@ -50,7 +52,7 @@ class Wrogowie:public Ruch
     public:
     void przeciwnicy (Obiekty * platforma_ptr);
     void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr);
-    void czas_punkty();
+    void czas_punkty(Obiekty *platforma_ptr);
     Wrogowie(Obiekty *platforma_ptr)
     :Ruch(10){platforma_ptr->wrog.setPosition(platforma_ptr->enemy_loc_X, platforma_ptr->enemy_loc_Y);}
 };

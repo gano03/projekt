@@ -7,36 +7,43 @@
 #include "move.h"
 #include "main.h"
 
-void Wrogowie::czas_punkty()
+void Wrogowie::czas_punkty(Obiekty *platforma_ptr)
 {
-    std::vector<int> sek = {5,4,3,2,1};
-    for (auto &sekk: sek)
-    {                             //jeszcze nie gotowe
-        std::cout << "Zosatlo " << sekk << " sekund\n";
+    
+    std::vector<float> sek;
+    platforma_ptr->wrog_czas = platforma_ptr->czasomierz.getElapsedTime();
+    sek.push_back(platforma_ptr->wrog_czas.asSeconds());
+    for (auto &sekk: sek) // zakresowa pętla for
+    {
+        if (sekk == platforma_ptr->wrog_czas.asSeconds())
+        {                             
+            std::cout << "Minelo " << sekk << " sekund\n";
+            if (platforma_ptr->wrog_czas.asSeconds() > 5)
+            {
+                std::cout << "Czas minal - koniec gry\n";
+                exit(1);
+            }
+        }
+        
     }
+    platforma_ptr->czasomierz.restart();
 }
 //*********************************************************************
 void  Wrogowie::wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr)
 {
     float wekX = rand()%1200;
-    this->czas_punkty();
-    //std::cout << "test\n";
     if ((platforma.rozmieszczenie.x < (platforma_ptr->rozmieszczenie_wrog.x + 15)) && (platforma.rozmieszczenie.x > (platforma_ptr->rozmieszczenie_wrog.x - 15)) && (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)))
     {
         platforma_ptr->wrog.setPosition(wekX, 200);
         platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
-        
+        this->czas_punkty(platforma_ptr);
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
         {
             platforma_ptr->wrog.setFillColor(sf::Color::Green);
-            //usleep (350000);
         }
-        
-        //std::cout << "roz to" << platforma_ptr->rozmieszczenie_wrog.x <<"\n";
     }
     else
         platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
-        //std::cout << "roz to" << platforma_ptr->rozmieszczenie_wrog.x <<"\n";
 }
 //*****************************************************************************
 void Wrogowie::przeciwnicy( Obiekty * platforma_ptr)
@@ -58,7 +65,6 @@ void Ruch::platforma_ruch ()
     {
         this->platform.move(this->przemieszczenie * this->predkosc * this->idealny_czas);
         this->rozmieszczenie = this->platform.getPosition();
-        //std::cout << "rozmieszcznie x to" << this->rozmieszczenie.x << "rozmieszczenie y to " << this->rozmieszczenie.y << " \n";
         if (this->rozmieszczenie.x > 1210)
         {
             this->platform.move(-1,0);
@@ -72,6 +78,5 @@ void Ruch::platforma_ruch ()
         {
             this->platform.move(1,0);
         }
-       // std::cout << "rozmieszcznie x to" << this->rozmieszczenie.x << "rozmieszczenie y to" << this->rozmieszczenie.y << "\n";
     }
 }
