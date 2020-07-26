@@ -11,6 +11,10 @@ Projekt posiada na chwilę obecną:
 -metody wirtualne
 -dziedziczenie
 -deklaracje przyjaciela
+-zakresowa pętla for 
 -pliki nagłowkowe
 -makefile 
 Projekt jest jeszcze w trakcie tworzenia...
+
+Instrukcja gry:
+Poruszanie platofrmą za pomocą strzałek lewo-prawo, aby zbic czerwona platforma ,należy się ustwić w tej samej pozycji i nacisnąć spację.

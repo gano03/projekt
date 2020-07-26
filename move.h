@@ -15,7 +15,7 @@ public:
     int sizeY = 10;
     sf::RectangleShape platform{sf::Vector2f(sizeX,sizeY)};
     sf::RectangleShape wrog {sf::Vector2f(sizeX, sizeY)};
-    friend class Wrogowie;
+    friend class Wrogowie; //deklaracja przyjaciela
     private:
     float wrog_aktX;
     float wrog_aktY;
@@ -25,13 +25,13 @@ public:
    
 };
 //************************************************************************
-class Ruch:public Obiekty
+class Ruch:public Obiekty //dziedziczenie
 {
     public:
     Ruch(int X_loc, int Y_loc);
     Ruch(int k){};
     ~Ruch(){};
-    virtual void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr){std::cout << "Funkcja klasy bazowej'n";};
+    virtual void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr){std::cout << "Funkcja klasy bazowej'n";}; //metoda wirtualna
     void platforma_ruch ();
     //private:
     float aktualna_pozX;
@@ -50,7 +50,7 @@ class Wrogowie:public Ruch
     public:
     void przeciwnicy (Obiekty * platforma_ptr);
     void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr);
-    Wrogowie()
-    :Ruch(10){}
-    //void platforma_ruch();
+    void czas_punkty();
+    Wrogowie(Obiekty *platforma_ptr)
+    :Ruch(10){platforma_ptr->wrog.setPosition(platforma_ptr->enemy_loc_X, platforma_ptr->enemy_loc_Y);}
 };

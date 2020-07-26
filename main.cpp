@@ -12,8 +12,8 @@ int main()
     gra_okno.setVerticalSyncEnabled(true);
     Obiekty platforma;
     Ruch platformy{platforma.X_loc, platforma.Y_loc};
-    Wrogowie *wrogowie= new (Wrogowie);
     Obiekty *platforma_ptr = new (Obiekty);
+    Wrogowie *wrogowie= new Wrogowie(platforma_ptr);
 
 
     while (gra_okno.isOpen())
