@@ -5,4 +5,4 @@
 #include <SFML/Window.hpp>
 
 
-
+ static int punkty;

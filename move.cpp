@@ -24,7 +24,6 @@ void Wrogowie::czas_punkty(Obiekty *platforma_ptr)
                 exit(0);
             }
         }
-        
     }
     platforma_ptr->czasomierz.restart();
 }
@@ -41,6 +40,8 @@ void  Wrogowie::wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr)
         {
             platforma_ptr->wrog.setFillColor(sf::Color::Green);
         }
+        punkty = punkty + 1;
+        std::cout<<"Masz " << punkty <<" punktow\n";
     }
     else
         platforma_ptr->rozmieszczenie_wrog = platforma_ptr->wrog.getPosition();
