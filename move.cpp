@@ -21,7 +21,7 @@ void Wrogowie::czas_punkty(Obiekty *platforma_ptr)
             if (platforma_ptr->wrog_czas.asSeconds() > 5)
             {
                 std::cout << "Czas minal - koniec gry\n";
-                exit(1);
+                exit(0);
             }
         }
         

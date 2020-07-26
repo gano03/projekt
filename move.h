@@ -32,8 +32,8 @@ class Ruch:public Obiekty //dziedziczenie
     public:
     Ruch(int X_loc, int Y_loc);
     Ruch(int k){};
-    ~Ruch(){};
-    virtual void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr){std::cout << "Funkcja klasy bazowej'n";}; //metoda wirtualna
+    ~Ruch(){std::cout << "Destruktor wywolany\n";};
+    virtual void wrog_ruch(Ruch & platforma, Obiekty *platforma_ptr){std::cout << "Funkcja klasy bazowej\n";}; //metoda wirtualna
     void platforma_ruch ();
     //private:
     float aktualna_pozX;
